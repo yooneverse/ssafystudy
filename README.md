@@ -18,7 +18,7 @@
 ### 폴더
 - 본인 브랜치가 연결된 폴더에 주차별로 week1, week2, ... 등으로 폴더 생성
 - 폴더 안에 파일 넣어서 push할것
-- ex)dohyun/week1/SWEA_2005_파스칼의 삼각형
+- ex) dohyun/week1/SWEA_2005_파스칼의 삼각형
 
 ### 업로드할 파일명 규칙
 - SWEA -> SWEA
@@ -39,6 +39,17 @@
 
 <details><summary> <b>PR시 해야할것</b> </summary>
 <div markdown="1">
+<br>
+  
+![이미지1](./assets/readme/how_to_1.png)
+- `Pull Requests` 탭을 눌러 본인의 PR 등록 후 네모 박스 안의 `Assignees` 오른쪽 톱니바퀴를 누른다.
 
+![이미지2](./assets/readme/how_to_2.png)
+- 본인의 이름을 누른다.
+- 또는 첫 번째 이미지에서 `assign yourself` 버튼을 눌러도 된다.
+
+![이미지1](./assets/readme/how_to_1.png)
+- 네모 박스 안의 `Labels` 오른쪽 톱니바퀴를 누른다.
+  
 </div>
 </details>
