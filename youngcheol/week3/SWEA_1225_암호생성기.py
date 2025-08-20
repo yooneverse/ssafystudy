@@ -15,7 +15,7 @@ for T in range(1, 11):
                 break  # 멈춘다
             q.append(x)  # 0보다 작은게 아니면 x를 추가한다.
 
-        if x == 0:  # 만약 x값이 0이 되게 된다면 break
+        if x == 0:  # 만약 x값이 0이 되게 된다면 break 써야한다
             break
 
     print(f'#{tc}', *q)
