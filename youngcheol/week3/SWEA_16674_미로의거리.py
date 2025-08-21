@@ -1,36 +1,41 @@
 from collections import deque
 
-di = [-1, 1, 0, 0]
-dj = [0, 0, -1, 1]
-
 def bfs(si, sj):
+    visited = [[0]*N for _ in range(N)]
 
-    visited = [[0] * N for _ in range(N)]
-    # range(N)에서 range의 범위가 N인지 N+1인지 헷갈립니다.
+    q = deque()  # 다음에 갈 장소 저장
+    q.append((si, sj))
+    visited[si][sj] = 1
 
-    q = deque()    # 다음에 방문할 장소 저장
-
-    q.append(si, sj)  #시작 장소를 큐에 추가하고
-
-    visited[si, sj] = 1  # 시작점을 1로 해서 진행
-
-    while q:      #while문을 언제 쓰면 좋은지 팁같은거 있는지 궁금합니다.
-        i, j = q.popleft()
-
-        if maze[i][j] == 3:           #만약 maze[i][j]가 값이 3이면
-            return visited[i][j]        # visited[i][j]값 반환
-
+    while q:
+        i, j = q.popleft()  # deque는 popleft 사용
+        if matrix[i][j] == 3:  # 꺼낸 좌표가 도착지이면
+            return visited[i][j] - 2  # 출발(2)과 도착(3)을 빼고 그 사이 0의 개수
 
         for d in range(4):
-            ni = i + di[d]    #다음칸으로 1칸씩 상하좌우로 움직이고
-            nj = j + dj[d]    # 움직일때마다 새로운 좌표생성
+            ni = i + di[d]
+            nj = j + dj[d]
 
+            # 벽이 1인 지점 통과 불과, 아직 방문하지 않은 칸인지 확인,
+            if 0 <= ni < N and 0 <= nj < N and matrix[ni][nj] != 1 and visited[ni][nj] == 0:
+                q.append((ni, nj))
+                visited[ni][nj] = visited[i][j] + 1
 
+    return 0  # 경로가 없는 경우
 
+di = [-1, 1, 0, 0]
+dj = [0, 0, -1, 1]
 
 T = int(input())
 
 for tc in range(1, T+1):
-    N = int(input())
-    maze = [list(map(int, input().split())) for _ in range(N)]
-    adj_l = [[] for _ in range(N+1)] #인접리스트
+    N = int(input())         # 미로의 크기
+    matrix = [list(map(int, input().strip())) for _ in range(N)]
+
+    # 출발지 2 찾기
+    for i in range(N):
+        for j in range(N):
+            if matrix[i][j] == 2:       #2에서 출발하니까 값이 2인 지점이 시작점
+                si, sj = i, j
+
+    print(f'#{tc} {bfs(si, sj)}')
