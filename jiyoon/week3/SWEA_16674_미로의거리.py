@@ -48,8 +48,11 @@ for tc in range(1, T + 1):
                 found = True  # 찾으면 종료
                 break
 
+    #solve로 할당
     solve = bfs(si, sj)
     print(f"#{tc} {solve}")
+
+
 
 
 
