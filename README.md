@@ -1,0 +1,92 @@
+# SSAFY 14th 부울경 1반 알고리즘 스터디
+- 팀장  `김지윤`
+- 팀원  `백수연` `이도현` `장영철` `조하원`
+## 스터디 진행 방식
+- 매 주 화요일, 목요일 21:00 ~ 22:00 진행
+- 수업 시간에 진행된 내용, 과제, 실습 등이나 백준, SWEA, 프로그래머스 등 선정된 알고리즘 문제 풀이 및 리뷰
+- 어려웠거나 잘 모르는 부분, 널리 알리고 싶은 풀이 등 자유롭게 리뷰
+
+|시간|진행|
+|:---:|:---:|
+|21:00 ~ 21:10|스터디 폴더/파일 정리 후 push, PR 요청|
+|21:10 ~ 21:50|PR 파일 리뷰|
+|21:50 ~ 22:00|병합 확인 후 복습|
+
+<details><summary> <b>PR시 해야할것</b> </summary>
+<div markdown="1">
+  
+---
+  
+![이미지1](./assets/readme/how_to_1.png)
+
+- `Pull Requests` 탭을 눌러 본인의 PR 등록 후 네모 박스 안의 `Assignees` 오른쪽 톱니바퀴를 누른다.
+---
+![이미지2](./assets/readme/how_to_2.png)
+
+- 본인의 이름을 누른다.
+- 또는 첫 번째 이미지에서 `assign yourself` 버튼을 눌러도 된다.
+---
+![이미지1](./assets/readme/how_to_1.png)
+
+- 네모 박스 안의 `Labels` 오른쪽 톱니바퀴를 누른다.
+---
+![이미지1](./assets/readme/how_to_3.png)
+
+- 적절한 Label을 선택한다.
+---
+![이미지1](./assets/readme/how_to_4.png)
+
+- 적용된 모습
+
+</div>
+</details>
+
+<details><summary> <b>이전에 리뷰했던 내용 찾아보기</b> </summary>
+<div markdown="1">
+
+---
+  
+![이미지1](./assets/readme/how_to_5.png)
+
+- `Pull Requests` 탭을 눌러 네모 박스 안의 `Closed` 버튼을 누른다.
+---
+![이미지1](./assets/readme/how_to_6.png)
+
+- 네모 박스 안의 `Assignee`를 누른다.
+---
+![이미지1](./assets/readme/how_to_7.png)
+
+- 모아 보고싶은 Assignee, 책임자(작성자)를 고른다.
+---
+![이미지1](./assets/readme/how_to_8.png)
+
+- 책임자별로 PR했던 기록이 나오는 모습
+
+</div>
+</details>
+
+## 스터디 파일 양식
+  
+### 폴더
+- 본인 브랜치가 연결된 폴더에 주차별로 week1, week2, ... 등으로 폴더 생성
+- 폴더 안에 파일 넣어서 push할것
+- ex) `dohyun/week1/SWEA_2005_파스칼의_삼각형`
+
+### 업로드할 파일명 규칙
+- SWEA -> SWEA
+- 백준 -> BAEK
+- `{문제사이트}_{문제번호}_{문제이름}.py`
+- ex) `SWEA_2005_파스칼의_삼각형`
+
+### Pull Request
+- `{문제사이트}_{문제번호}_{문제이름}_{본인이름}`
+- ex) `SWEA_2005_파스칼의_삼각형_도현`
+
+### Commit Message
+- `{날짜}_{챕터}_{수정내용}`
+- ex) `0812_Stack_제출`
+
+</div>
+</details>
+
+
