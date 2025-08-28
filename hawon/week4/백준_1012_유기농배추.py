@@ -1,8 +1,9 @@
 from collections import deque
 
 # bfs 만들기
-def bfs(graph, r, c, M, N, visited):
-    q = deque([r,c])
+def bfs(r, c, visited):
+    q = deque([r, c])
+    visited[r][c] = 1
 
     dx = [-1,1,0,0]
     dy = [0,0,-1,1]
@@ -14,7 +15,7 @@ def bfs(graph, r, c, M, N, visited):
             nr = qr + dr
             nc = qc + dc
 
-            if 0 <= nr < N and 0 <= nc < M and (visited[nr][nc] ==0):
+            if 0 <= nr < N and 0 <= nc < M and (graph[nr][nc] == 1) and (visited[nr][nc] ==0):
                 visited = [nr][nc] = 1
                 q.append([nr, nc])
 
@@ -28,15 +29,13 @@ for tc in range(1, T + 1):
     # 해당되는 좌표에 1 추가하기
     for i in range(K):
         r, c = map(int, input().split())
-        list[r][c] = 1
+        graph[r][c] = 1
 
     worm = 0
 
-    # 만약 1을 만나면 cnt를 센다. 근데 0을 만나면 1을 초기화시켜줘야 함. 그리고 1을 만나면 다시 세야하고
     for r in range(N):
         for c in range(M):
             if list[r][c] == 1 and visited[r][c] == 0:
                 worm += 1
+                bfs(r, c, visited)
 
-
-    print(cnt)
