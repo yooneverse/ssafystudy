@@ -4,13 +4,7 @@
 ## 스터디 진행 방식
 - 매 주 2번 13:30 ~ 14:00 진행
 - [백준 그룹](https://www.acmicpc.net/group/23834)에 본인 단계에 맞는 문제 등록
-- 본인 문제 풀이 및 다른 문제 리뷰
-
-|시간|진행|
-|:---:|:---:|
-|21:00 ~ 21:10|스터디 폴더/파일 정리 후 push, PR 요청|
-|21:10 ~ 21:50|PR 파일 리뷰|
-|21:50 ~ 22:00|병합 확인 후 복습|
+- 하루에 3명, 발표자는 본인 문제 풀이 / 참가자는 발표한 문제 리뷰
 
 <details><summary> <b>PR시 해야할것</b> </summary>
 <div markdown="1">
@@ -41,7 +35,7 @@
 </div>
 </details>
 
-<details><summary> <b>이전에 리뷰했던 내용 찾아보기</b> </summary>
+<details><summary> <b>이전 PR 찾아보기</b> </summary>
 <div markdown="1">
 
 ---
