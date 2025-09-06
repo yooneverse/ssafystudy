@@ -11,6 +11,7 @@
    - [Commit Message](#commit-message)
    - [Pull Request](#pull-request)
 3. [스터디 주차별 문제](#스터디-주차별-문제)
+   - [1주차](#1주차)
 
 ## 스터디 진행 방식
 
@@ -100,3 +101,19 @@
 - ex) `SWEA_2005_파스칼의_삼각형_도현`
 
 ## 스터디 주차별 문제
+
+<details><summary> <b>1주차</b> </summary>
+<div markdown="1">
+
+|문제|문제 제목|
+|:-:|:-:|
+|1520|[내리막길](https://www.acmicpc.net/problem/1520)|
+|1931|[회의실 배정](https://www.acmicpc.net/problem/1931)|
+|2606|[바이러스](https://www.acmicpc.net/problem/2606)|
+|17478|[재귀함수가 뭔가요?](https://www.acmicpc.net/problem/17478)|
+|17070|[파이프 옮기기 1](https://www.acmicpc.net/problem/17070)|
+|11060|[점프 점프](https://www.acmicpc.net/problem/11060)|
+
+</div>
+</details>
+
