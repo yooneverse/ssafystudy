@@ -101,7 +101,7 @@
 
 ## 스터디 주차별 문제
 
-<details><summary> <b>1주차</b> </summary>
+<details><summary> <b>5주차</b> </summary>
 <div markdown="1">
 
 |문제|문제 제목|
