@@ -11,7 +11,7 @@
    - [Commit Message](#commit-message)
    - [Pull Request](#pull-request)
 3. [스터디 주차별 문제](#스터디-주차별-문제)
-   - [1주차](#\1주차)
+   - [1주차](#1주차)
 
 ## 스터디 진행 방식
 
