@@ -36,6 +36,7 @@ def pipe(row, col, d):  # 파이프 연결 함수
 def ok(r, c):
     return 0 <= r < N and 0 <= c < N and home[r][c] == 0
 
+
 def dp(r, c, d):
     if r == N - 1 and c == N - 1:
         return  1
