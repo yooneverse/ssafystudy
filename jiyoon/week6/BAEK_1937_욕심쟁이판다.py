@@ -41,7 +41,7 @@ for i in range(n):
 
 print(answer)
 
-#--------------(실패버전도 업로드합니다.)
+#--------------(실패버전도 업로드합니다!)
 
 n = int(input())
 forest = [list(map(int, input().split())) for _ in range(n)]
