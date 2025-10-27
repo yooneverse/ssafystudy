@@ -25,7 +25,8 @@ for i in range(N):
                 # 그 다음(먼저 들어온) 스택 비교를 위해 pop()
                 stack.pop()
                 # 변수 조정
-                s = stack[-1]
+                if stack:
+                    s = stack[-1]
             # 반복 끝나면 다음 비교를 위해 스택에 i 추가
             stack.append(i)
         # 앞 자릿수가 더 크면 그대로 스택에 추가
