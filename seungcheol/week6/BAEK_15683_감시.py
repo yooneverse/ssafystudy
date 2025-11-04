@@ -84,156 +84,156 @@ dfs(graph, 0)
 print(answer)
 
 # 최초 풀이
-# import copy
-#
-# N, M = map(int, input().split())
-#
-# graph = [list(map(int, input().split())) for _ in range(N)]
-#
-# # 상 우 하 좌
-# delta = [[-1, 0], [0, 1], [1, 0], [0, -1]]
-#
-# cctv = []
-#
-# for i in range(N):
-#     for j in range(M):
-#         # 5는 미리 적용
-#         if graph[i][j] == 5:
-#             for d in range(4):
-#                 ni = i + delta[d][0]
-#                 nj = j + delta[d][1]
-#                 while 0 <= ni < N and 0 <= nj < M:
-#                     if not graph[ni][nj]:
-#                         graph[ni][nj] = "#"
-#                     if graph[ni][nj] == 6:
-#                         break
-#                     ni += delta[d][0]
-#                     nj += delta[d][1]
-#         # 다른 cctv 저장
-#         elif graph[i][j] in [1, 2, 3, 4]:
-#             cctv.append((i, j, graph[i][j]))
-#
-# # 최대 공백 수
-# answer = float("inf")
-#
-# # 방 정보, cctv 위치, cctv 적용 수
-# def dfs(matrix, camera, idx):
-#     global answer
-#
-#     # cctv 모두 적용 시
-#     if idx == len(camera):
-#         cnt = 0
-#         for y in range(N):
-#             for x in range(M):
-#                 if not matrix[y][x]:
-#                     cnt += 1
-#         # cctv 수 최신화
-#         answer = min(answer, cnt)
-#         return
-#
-#     # cctv 정보
-#     r, c, s = camera[idx]
-#
-#     if s == 1:
-#         for k in range(4):
-#             tmp = copy.deepcopy(matrix)
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#             dfs(tmp, camera, idx + 1)
-#
-#     elif s == 2:
-#         for k in range(2):
-#             tmp = copy.deepcopy(matrix)
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#
-#             nr = r + delta[k + 2][0]
-#             nc = c + delta[k + 2][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k + 2][0]
-#                 nc += delta[k + 2][1]
-#             dfs(tmp, camera, idx + 1)
-#
-#     elif s == 3:
-#         for k in range(4):
-#             tmp = copy.deepcopy(matrix)
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#
-#             k = (k + 1) % 4
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#             dfs(tmp, camera, idx + 1)
-#
-#     elif s == 4:
-#         for k in range(4):
-#             tmp = copy.deepcopy(matrix)
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#
-#             k = (k + 1) % 4
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#
-#             k = (k + 1) % 4
-#             nr = r + delta[k][0]
-#             nc = c + delta[k][1]
-#             while 0 <= nr < N and 0 <= nc < M:
-#                 if not tmp[nr][nc]:
-#                     tmp[nr][nc] = "#"
-#                 if tmp[nr][nc] == 6:
-#                     break
-#                 nr += delta[k][0]
-#                 nc += delta[k][1]
-#
-#             dfs(tmp, camera, idx + 1)
-#
-# dfs(graph, cctv, 0)
-#
-# print(answer)
+import copy
+
+N, M = map(int, input().split())
+
+graph = [list(map(int, input().split())) for _ in range(N)]
+
+# 상 우 하 좌
+delta = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+
+cctv = []
+
+for i in range(N):
+    for j in range(M):
+        # 5는 미리 적용
+        if graph[i][j] == 5:
+            for d in range(4):
+                ni = i + delta[d][0]
+                nj = j + delta[d][1]
+                while 0 <= ni < N and 0 <= nj < M:
+                    if not graph[ni][nj]:
+                        graph[ni][nj] = "#"
+                    if graph[ni][nj] == 6:
+                        break
+                    ni += delta[d][0]
+                    nj += delta[d][1]
+        # 다른 cctv 저장
+        elif graph[i][j] in [1, 2, 3, 4]:
+            cctv.append((i, j, graph[i][j]))
+
+# 최대 공백 수
+answer = float("inf")
+
+# 방 정보, cctv 위치, cctv 적용 수
+def dfs(matrix, camera, idx):
+    global answer
+
+    # cctv 모두 적용 시
+    if idx == len(camera):
+        cnt = 0
+        for y in range(N):
+            for x in range(M):
+                if not matrix[y][x]:
+                    cnt += 1
+        # cctv 수 최신화
+        answer = min(answer, cnt)
+        return
+
+    # cctv 정보
+    r, c, s = camera[idx]
+
+    if s == 1:
+        for k in range(4):
+            tmp = copy.deepcopy(matrix)
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+            dfs(tmp, camera, idx + 1)
+
+    elif s == 2:
+        for k in range(2):
+            tmp = copy.deepcopy(matrix)
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+
+            nr = r + delta[k + 2][0]
+            nc = c + delta[k + 2][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k + 2][0]
+                nc += delta[k + 2][1]
+            dfs(tmp, camera, idx + 1)
+
+    elif s == 3:
+        for k in range(4):
+            tmp = copy.deepcopy(matrix)
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+
+            k = (k + 1) % 4
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+            dfs(tmp, camera, idx + 1)
+
+    elif s == 4:
+        for k in range(4):
+            tmp = copy.deepcopy(matrix)
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+
+            k = (k + 1) % 4
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+
+            k = (k + 1) % 4
+            nr = r + delta[k][0]
+            nc = c + delta[k][1]
+            while 0 <= nr < N and 0 <= nc < M:
+                if not tmp[nr][nc]:
+                    tmp[nr][nc] = "#"
+                if tmp[nr][nc] == 6:
+                    break
+                nr += delta[k][0]
+                nc += delta[k][1]
+
+            dfs(tmp, camera, idx + 1)
+
+dfs(graph, cctv, 0)
+
+print(answer)
