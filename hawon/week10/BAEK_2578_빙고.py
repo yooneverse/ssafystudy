@@ -9,7 +9,7 @@ def delete_num(num):
 def bingo():
     cnt = 0  # 빙고 줄 개수 세기
 
-    # 1. 행 검사
+    # 1. 행 돌기
     for r in range(N):
         zero_cnt = 0  # 한 행에 0이 몇 개인지 세기
         for c in range(N):
@@ -18,7 +18,7 @@ def bingo():
         if zero_cnt == 5:  # 한 줄이 모두 0이면
             cnt += 1
 
-    # 2. 열 검사
+    # 2. 열 돌기
     for c in range(N):
         zero_cnt = 0
         for r in range(N):
@@ -43,7 +43,7 @@ def bingo():
     if zero_cnt == 5:
         cnt += 1
 
-    # 빙고 줄이 3개 이상이면 True 반환
+    # 빙고 줄이 3개 이상이면 True
     if cnt >= 3:
         return True
     else:
