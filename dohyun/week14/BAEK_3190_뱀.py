@@ -57,8 +57,6 @@ def move_str(y, x, d):
     if grid[ny][nx] == 0:
         by, bx = bodies.popleft()
         grid[by][bx] = 0
-    # 늦게 확인하는 이유:
-    # 머리가 꼬리를 향할 때 꼬리를 먼저 빼주고 머리가 들어갈 수 있기 때문
     if grid[ny][nx] == 1:
         return -1, -1
     bodies.append((ny, nx))
