@@ -1,28 +1,3 @@
-N = int(input())
-
-for _ in range(N):
-    t, p = map(int, input().split())
-
-    # 상담을 할지 말지를 선택하는 재귀적 접근 방법
-    def max_get(day, total_get):
-    # 현재 날짜와 수익을 넘겨받고 재귀적으로 탐색한다.
-    # 상담을 하지 않는 경우와 상담을 하는 경우를 비교하여 최대 수익을 구한다.
-        if day >= N:
-            return total_get
-    # 현재 날짜에 상담을 하지 않고 넘어가는 경우:
-    # 1. 다음 날로 넘어가서 다시 재귀적으로 탐색한다.
-        no_get = max_get(day+1, total_get)
-    # 현재 날짜에 상담을 하는 경우:
-    # 1. 상담이 끝난 날을 기준으로 더 이상 상담을 할 수 없다면 그 뒤로 넘어간다.
-    # 2. 상담 후 얻을 수 있는 수익과 나머지 날짜에 대한 최대 수익을 더해서 결과를 계산한다.
-        yes_get= 0
-        if day + t[day] <= N:
-            yes_get = max_get(day + t[day], total_get+p[day])
-    # 각 경우에서 얻을 수 있는 최대 수익을 비교하여 더 큰 값을 선택한다.
-        return max(no_get, yes_get)
-    # 최종적으로 첫 번째 날부터 시작하는 최대 수익을 출력한다.
-    print(max_get(0, 0))
-
 N = int(input())  # 상담 일수
 
 # 상담 시간과 수익을 리스트로 저장
@@ -92,3 +67,5 @@ for day in range(N, 0, -1):
     dp[day] = max(take, skip)
 
 print(dp[1])
+
+
