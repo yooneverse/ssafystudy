@@ -1,6 +1,7 @@
 # BAEK 20055. 컨베이어 벨트 위의 로봇
 import sys
 sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 
 # 컨베이어 벨트 길이: N, 벨트 길이: 2N
 N, K = map(int, input().split())
@@ -70,11 +71,13 @@ while True:
 
     # 먼저 올라간 로봇부터 앞으로 이동이 가능하면 이동
     for i in range(N-2, 0, -1):
-        if on_robot[(belt_idx + i) % n] and not on_robot[(belt_idx + i + 1) % n] and A[(belt_idx + i + 1) % n]:
-            on_robot[(belt_idx + i) % n] = False
-            on_robot[(belt_idx + i + 1) % n] = True
-            A[(belt_idx + i + 1) % n] -= 1
-            if A[(belt_idx + i + 1) % n] == 0:
+        cur = (belt_idx + i) % n
+        nxt = (cur + 1) % n
+        if on_robot[cur] and not on_robot[nxt] and A[nxt]:
+            on_robot[cur] = False
+            on_robot[nxt] = True
+            A[nxt] -= 1
+            if A[nxt] == 0:
                 zero_cnt += 1
 
     # 한 번 더 내리는 위치 비우기
