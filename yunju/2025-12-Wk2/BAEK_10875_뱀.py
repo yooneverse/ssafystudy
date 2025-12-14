@@ -37,7 +37,6 @@ why? 맵의 사이즈가 (2L+1) (2L+1)
 가로선이 세로선이 아닌 가로선과 만날 수 있다
 언제? 출발점
 '''
-
 import sys
 input = sys.stdin.readline
 
