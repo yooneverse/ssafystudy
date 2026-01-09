@@ -10,7 +10,6 @@
    - [업로드할 파일명 규칙](#업로드할-파일명-규칙)
    - [Commit Message](#commit-message)
    - [Pull Request](#pull-request)
-3. [스터디 주차별 문제](#스터디-주차별-문제)
 
 ## 스터디 진행 방식
 
@@ -19,6 +18,26 @@
 - 본인의 문제 풀이는 최소 발표 전 날에 끝내도록 한다. 나머지 문제 풀이는 자유
 - 첫 번째 발표 - 실버 그룹 / 두 번째 발표 - 골드 그룹
 - 발표자는 문제 선택 후 풀이 / 참가자는 발표한 문제 리뷰
+
+### 스터디 환경 설정
+
+```bash
+git clone --filter=blob:none --no-checkout https://github.com/yooneverse/ssafystudy.git
+cd ssafystudy
+
+git sparse-checkout init --cone
+git sparse-checkout set <본인이름>
+git checkout master
+
+### 본인이름 폴더, 주차별 폴더 생성하고 알고리즘 파일 첨부
+
+git switch -c <본인이름>
+git add .
+git commit -m <커밋메시지>
+git push --set-upstream origin <본인이름>
+```
+
+- 이후 ssafystudy 폴더 내에서 계속해서 업데이트
 
 <details><summary> <b>PR시 해야할것</b> </summary>
 <div markdown="1">
@@ -99,21 +118,3 @@
 
 - `{문제사이트}_{문제번호}_{문제이름}_{본인이름}`
 - ex) `SWEA_2005_파스칼의_삼각형_도현`
-
-## 스터디 주차별 문제
-
-<details><summary> <b>5주차</b> </summary>
-<div markdown="1">
-
-|문제|문제 제목|
-|:-:|:-:|
-|1520|[내리막길](https://www.acmicpc.net/problem/1520)|
-|1931|[회의실 배정](https://www.acmicpc.net/problem/1931)|
-|2606|[바이러스](https://www.acmicpc.net/problem/2606)|
-|17478|[재귀함수가 뭔가요?](https://www.acmicpc.net/problem/17478)|
-|17070|[파이프 옮기기 1](https://www.acmicpc.net/problem/17070)|
-|11060|[점프 점프](https://www.acmicpc.net/problem/11060)|
-
-</div>
-</details>
-
