@@ -2,10 +2,9 @@ N = int(input())
 
 def check(permutation):
     global answer
-    if answer:
-        return
     if len(permutation) == N:
         answer = int(permutation)
+        return
 
     length = len(permutation) + 1
 
@@ -16,6 +15,8 @@ def check(permutation):
                 break
         else:
             check(tmp)
+            if answer:
+                return
 
 answer = False
 check("")
