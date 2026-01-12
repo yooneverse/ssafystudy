@@ -31,9 +31,8 @@ def solve():
   
             bridge.append(0)
             
-
-    
     time += w
     
+    # 맨마지막 시간 계산 
     print(time)
 
