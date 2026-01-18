@@ -44,21 +44,21 @@ i+num이 2n이상이면 불가능
 '''
 
 # 랭퍼드 수열 만드는 함수
-# 현재 넣을 숫자와 현재까지 만들어진 수열을 받아서 이어나감
+# 현재 넣을 숫자 받아서 이어나감
 # n부터 시작해서 1까지 수열에 다 넣었다면 경우의 수 1 증가
-def backtrack(num, sequence):
+def backtrack(num):
     global ans
-    
+
     # x,y번째 넣기로 한 수라면 다음 수로 넘어감
     if num == xth:
-        backtrack(num-1, sequence)
+        backtrack(num-1)
         return
-    
+
     # 현재 넣는 수가 0이라면 (1까지 다 넣었다면) 결과 1 증가
     if num == 0:
         ans += 1
         return
-    
+
     # num을 넣을 인덱스
     # i번째와 i+num+1번째 자리에 num을 넣어야 함
     for i in range(1,2*n+1):
@@ -67,16 +67,16 @@ def backtrack(num, sequence):
             return
 
         # 이미 채워진 칸이라면 다음 칸으로
-        if sequence[i] != 0 or sequence[i+num+1] != 0:
+        if numbers[i] != 0 or numbers[i+num+1] != 0:
             continue
 
         # 동일한 두 숫자 삽입
-        sequence[i] = sequence[i+num+1] = num
+        numbers[i] = numbers[i+num+1] = num
 
         # 다음 숫자 삽입
-        backtrack(num-1, sequence)
+        backtrack(num-1)
 
-        sequence[i] = sequence[i+num+1] = 0
+        numbers[i] = numbers[i+num+1] = 0
 
 
 n,x,y = map(int, input().split())
@@ -95,7 +95,7 @@ numbers[y] = xth
 # 가능한 랭퍼드 수열 개수
 ans = 0
 
-backtrack(n, numbers)
+backtrack(n)
 
 print(ans)
 
