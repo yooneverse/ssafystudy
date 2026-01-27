@@ -27,26 +27,18 @@ class Main {
 
         Queue<Integer> qu = new LinkedList<>();
 
-        // 다리 길이 만큼 한칸 한칸에 무게 (현재는 모두 0) 세팅
         for (int i = 0; i < m; i++) {
             qu.offer(0);
         }
-        // 모든 트럭이 지나갈 때 까지 반복
+
         while (!qu.isEmpty()) {
-            // 한 번 움직일 때마다 1++
             time++;
-            // 트럭이 다리를 건넜다면
-            // => 현재 다리가 버티고 있는 전체 무게 -= 마지막 칸 트럭 무게
             localweight -= qu.poll();
-            // 대기중인 트럭이 없을 때 까지 반복
             if (!truck.isEmpty()) {
-                // 출발한 트럭 무게 + 현재 하중이 최대 하중보다 작다면
                 if (truck.peek() + localweight <= w) {
-                    // 트럭 지나가자
                     localweight += truck.peek();
                     qu.offer(truck.poll());
                 } else {
-                    // 아니면 트럭이 지나가지 못한다.
                     qu.offer(0);
                 }
             }

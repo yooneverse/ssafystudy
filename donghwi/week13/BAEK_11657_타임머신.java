@@ -1,12 +1,13 @@
+
 // https://www.acmicpc.net/problem/11657
 import java.io.*;
 import java.util.*;
 
-public class BAEK_11657_타임머신 {
-    static int n;                  // 정점(노드)의 개수
-    static int m;                  // 간선(도로)의 개수
-    static int[][] graph;          // 간선 정보를 저장할 배열 [출발, 도착, 가중치]
-    static long[] distance;        // 시작점으로부터의 최단 거리 배열
+class Main {
+    static int n; // 정점(노드)의 개수
+    static int m; // 간선(도로)의 개수
+    static int[][] graph; // 간선 정보를 저장할 배열 [출발, 도착, 가중치]
+    static long[] distance; // 시작점으로부터의 최단 거리 배열
     static final int INF = 2000000000; // 도달할 수 없는 노드를 표현하기 위한 큰 값 (무한대 역할)
 
     public static void main(String[] args) throws IOException {
@@ -17,7 +18,7 @@ public class BAEK_11657_타임머신 {
         n = Integer.parseInt(stk.nextToken());
         m = Integer.parseInt(stk.nextToken());
 
-        graph = new int[m][3];   // 간선 개수 m만큼 3칸짜리 배열 생성 (출발, 도착, 비용)
+        graph = new int[m][3]; // 간선 개수 m만큼 3칸짜리 배열 생성 (출발, 도착, 비용)
         distance = new long[n + 1]; // 1번 노드부터 시작하므로 n+1 크기로 생성
 
         // 간선 정보 입력 받기
@@ -56,9 +57,9 @@ public class BAEK_11657_타임머신 {
         // (n - 1)번 반복: 모든 간선을 확인하며 최단 거리 갱신
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < m; j++) {
-                int from = graph[j][0];  // 출발 노드
-                int to = graph[j][1];    // 도착 노드
-                int cost = graph[j][2];  // 간선 가중치
+                int from = graph[j][0]; // 출발 노드
+                int to = graph[j][1]; // 도착 노드
+                int cost = graph[j][2]; // 간선 가중치
 
                 // 출발 노드가 아직 도달 불가능 상태가 아니라면
                 if (distance[from] != INF) {

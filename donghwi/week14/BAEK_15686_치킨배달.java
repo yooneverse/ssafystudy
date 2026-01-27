@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 
-class BAEK_15686_치킨배달 {
+class Main {
     static int N;
     static int M;
     static int[][] map;
@@ -20,7 +20,7 @@ class BAEK_15686_치킨배달 {
         StringTokenizer stk = new StringTokenizer(br.readLine());
         N = Integer.parseInt(stk.nextToken()); // 도시 크기
         M = Integer.parseInt(stk.nextToken()); // 살아남을 치킨집 갯수
-        map = new int[N + 1][N + 1]; 
+        map = new int[N + 1][N + 1];
         for (int i = 1; i <= N; i++) {
             stk = new StringTokenizer(br.readLine());
 
