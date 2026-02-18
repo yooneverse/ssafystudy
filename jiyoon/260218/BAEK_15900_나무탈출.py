@@ -10,7 +10,7 @@ for _ in range(n - 1):
     g[a].append(b)
     g[b].append(a)
 
-# 깊이 저장용 배열
+# 깊이 저장용 배열 만들어두기
 depth = [-1] * (n + 1)
 depth[1] = 0  # 루트는 깊이 0
 

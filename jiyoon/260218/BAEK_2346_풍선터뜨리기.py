@@ -8,7 +8,7 @@ moves = list(map(int, input().split()))
 balloons = [(i + 1, moves[i]) for i in range(n)]
 
 result = []
-idx = 0  # 현재 위치
+idx = 0  # 현재 위치를 나타내는 인덱스
 
 while balloons:
     # 1. 현재 풍선 제거
